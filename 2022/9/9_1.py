@@ -2,12 +2,13 @@
 
 from math import sqrt
 
-
 with open('test.txt') as t:
     data = t.readlines()
 
 def etäisyys(a1,a2,b1,b2):
-    return sqrt((a1-b1)**2+(a2-b2)**2)
+    if sqrt((a1-b1)**2+(a2-b2)**2) < 1.5:
+        return True
+    return False
 s = (0,0)
 tv = s[0]
 to = s[1]
@@ -37,8 +38,7 @@ for i in data:
         else:
             print('VIRHE')
         tpaikka = (tv,to) 
-        if etäisyys(tpaikka[0],tpaikka[1],hpaikka[0],hpaikka[1]) < 1.5:
-        ##if (hpaikka[0] == tpaikka[0] or hpaikka[0] -1 == tpaikka[0] or hpaikka[0] +1 == tpaikka[0]) and (hpaikka[1] == tpaikka[1] or hpaikka[1] -1 == tpaikka[1] or hpaikka[1] +1 == tpaikka[1]):
+        if etäisyys(tpaikka[0],tpaikka[1],hpaikka[0],hpaikka[1]):
             hpaikka = hpaikka
         else: 
             hpaikka = tedel      
