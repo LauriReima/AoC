@@ -2,7 +2,7 @@
 
 from math import sqrt
 
-with open('test.txt') as t:
+with open('input.txt') as t:
     data = t.readlines()
 
 def etäisyys(a1,a2,b1,b2):
@@ -16,35 +16,35 @@ hv = s[0]
 ho = s[1]
 
 tLista = []
-hpaikka = (hv,ho)
+tpaikka = (tv,to)
 tedel = s
 for i in data:
-    print(hpaikka)
+
     suunta = i[0]
-    määrä = int(i[2])  
+    määrä = int(i[2:])  
     while määrä > 0:      
         if suunta == 'R':
-            to += 1
-            tedel = (tv,to-1)
+            ho += 1
+            hedel = (hv,ho-1)
         elif suunta == 'L':
-            to -= 1
-            tedel = (tv,to+1)
+            ho -= 1
+            hedel = (hv,ho+1)
         elif suunta == 'D':
-            tv -= 1
-            tedel = (tv+1,to)
+            hv -= 1
+            hedel = (hv+1,ho)
         elif suunta == 'U':
-            tv += 1
-            tedel = (tv-1,to)
+            hv += 1
+            hedel = (hv-1,ho)
         else:
             print('VIRHE')
-        tpaikka = (tv,to) 
-        if etäisyys(tpaikka[0],tpaikka[1],hpaikka[0],hpaikka[1]):
-            hpaikka = hpaikka
+        hpaikka = (hv,ho) 
+        if etäisyys(hpaikka[0],hpaikka[1],tpaikka[0],tpaikka[1]):
+            tpaikka = tpaikka
         else: 
-            hpaikka = tedel      
+            tpaikka = hedel      
         määrä -= 1
-        tLista.append(hpaikka)
-        print(tpaikka, hpaikka, tedel)
+        tLista.append(tpaikka)
+        print(tpaikka, hpaikka, hedel)
 
-tLista = list(dict.fromkeys(tLista))
-print(len(tLista))         
+##tLista = list(dict.fromkeys(tLista))
+print(len(set(tLista)))         
