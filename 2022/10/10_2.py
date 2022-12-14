@@ -38,13 +38,6 @@ for i in data:
                 sprite += int(row[1])
                 if cycle < sprite - 1 or cycle > sprite +1:
                     crt[crtCol].append(cycle)
-    
-    #print(cycle,sprite)
-print(crt)
-    
-
-#print(len(xList))
-#print(xList)
 for i in range(6):
     for j in range(40):
         if j in crt[i]:
