@@ -16,7 +16,7 @@ def numbers_in_string(word):
         elif len(arr) == 0: 
             jono += san_num[numero.get(arr[0])]
     return jono
-f = open("test.txt", 'r')
+f = open("data2.txt", 'r')
 data = f.readlines()
 numerot = '1234567890'
 san_num = {
