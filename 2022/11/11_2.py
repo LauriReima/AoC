@@ -40,7 +40,7 @@ while counter < 10000:
             elif monkey['operation'][0] == '*':
                 worry = monkey['level'][j] * int(monkey['operation'][1])
             monkey['count'] += 1
-            worry = worry % monkey['test'] + (monkey['test']*7)
+            worry = worry % monkey['test'] + (monkey['test']*)
             if worry % monkey['test'] == 0:
                 monkeys[monkey['true']]['level'].append(worry)    
                 monkey['level'].remove(monkey['level'][j])   
